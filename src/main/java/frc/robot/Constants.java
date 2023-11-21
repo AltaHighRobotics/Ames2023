@@ -21,14 +21,19 @@ public final class Constants {
   public static final int STICK_Y_AXIS = 1;
   public static final int STICK_Z_AXIS = 2;
   public static final int SLIDER_AXIS = 3;
+  public static final int BUTTON_A = 1;
 
   // Drive stuff.
   public static final double DRIVE_SPEED = 0.5;
   public static final double TURN_SPEED = 0.5;
 
   // Drive train.
-  public static final int RIGHT_MOTOR_1 = 0;
-  public static final int RIGHT_MOTOR_2 = 0;
-  public static final int LEFT_MOTOR_1 = 0;
-  public static final int LEFT_MOTOR_2 = 0;
+  public static final int RIGHT_MOTOR_1 = 1;
+  public static final int RIGHT_MOTOR_2 = 3;
+  public static final int LEFT_MOTOR_1 = 2;
+  public static final int LEFT_MOTOR_2 = 4;
+
+  //Ramp motor
+  public static final int RAMP_MOTOR = 5;
+  public static final double RAMP_SPEED = 0.5;
 }

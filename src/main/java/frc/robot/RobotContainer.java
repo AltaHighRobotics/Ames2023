@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.*;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -21,13 +22,15 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class RobotContainer {
   // Controllers.
-  private XboxController driveController = new XboxController(Constants.DRIVE_CONTROLLER);
+  private XboxController m_driveController = new XboxController(Constants.DRIVE_CONTROLLER);
 
   // Subsystems.
   private DriveTrainSub m_driveTrainSub = new DriveTrainSub();
+  private RampSub m_rampSub = new RampSub();
 
   // Commands.
-  private DriveCommand m_driveCommand = new DriveCommand(driveController, m_driveTrainSub);
+  private DriveCommand m_driveCommand = new DriveCommand(m_driveController, m_driveTrainSub);
+  private RampCommand m_rampCommand = new RampCommand(m_driveController, m_rampSub);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -46,6 +49,9 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
+    final JoystickButton rampSpinButton = new JoystickButton(m_driveController, Constants.BUTTON_A);
+
+    rampSpinButton.onTrue(m_rampCommand);
   }
 
   /**

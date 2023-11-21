@@ -33,7 +33,7 @@ public class DriveTrainSub extends SubsystemBase {
 
   public void stop() {
     rightMotor1.neutralOutput();
-    leftMotor2.neutralOutput();
+    leftMotor1.neutralOutput();
   }
 
   public void setRightMotors(double power) {

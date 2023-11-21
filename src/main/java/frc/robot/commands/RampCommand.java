@@ -6,20 +6,19 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.subsystems.DriveTrainSub;
-import frc.robot.Constants;
+import frc.robot.subsystems.RampSub;
 
-public class DriveCommand extends CommandBase {
-  /** Creates a new DriveCommand. */
+public class RampCommand extends CommandBase {
+  /** Creates a new RampCommand. */
   private XboxController m_driveController;
-  private DriveTrainSub m_driveTrainSub;
+  private RampSub m_rampSub;
 
-  public DriveCommand(XboxController driveController, DriveTrainSub driveTrainSub) {
-    m_driveController = driveController;
-    m_driveTrainSub = driveTrainSub;
-
-    addRequirements(m_driveTrainSub);
+  public RampCommand(XboxController driveController, RampSub rampSub) {
     // Use addRequirements() here to declare subsystem dependencies.
+    m_driveController = driveController;
+    m_rampSub = rampSub;
+
+    addRequirements(m_rampSub);
   }
 
   // Called when the command is initially scheduled.
@@ -29,10 +28,7 @@ public class DriveCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double xStick = m_driveController.getRawAxis(Constants.STICK_X_AXIS);
-    double yStick = -m_driveController.getRawAxis(Constants.STICK_Y_AXIS);
-
-    m_driveTrainSub.arcadeDrive(yStick * Constants.DRIVE_SPEED, xStick * Constants.TURN_SPEED);
+    m_rampSub.arcadeSpin();
   }
 
   // Called once the command ends or is interrupted.
