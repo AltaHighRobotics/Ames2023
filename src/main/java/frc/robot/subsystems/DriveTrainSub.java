@@ -45,8 +45,8 @@ public class DriveTrainSub extends SubsystemBase {
   }
 
   public void arcadeDrive(double forwardPower, double turnPower) {
-    setRightMotors(forwardPower - turnPower);
-    setLeftMotors(forwardPower + turnPower);
+    setRightMotors(forwardPower + turnPower);
+    setLeftMotors(forwardPower - turnPower);
   }
 
   @Override
