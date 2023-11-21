@@ -24,8 +24,8 @@ public final class Constants {
   public static final int BUTTON_A = 1;
 
   // Drive stuff.
-  public static final double DRIVE_SPEED = 0.5;
-  public static final double TURN_SPEED = 0.5;
+  public static final double DRIVE_SPEED = 0.2;
+  public static final double TURN_SPEED = 0.2;
 
   // Drive train.
   public static final int RIGHT_MOTOR_1 = 1;
