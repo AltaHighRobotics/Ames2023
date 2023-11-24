@@ -29,8 +29,9 @@ public class DriveCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double xStick = m_driveController.getRawAxis(Constants.STICK_X_AXIS);
-    double yStick = -m_driveController.getRawAxis(Constants.STICK_Y_AXIS);
+    //robot was backwards, flipped these, if still wrong flip back!
+    double xStick = -m_driveController.getRawAxis(Constants.STICK_X_AXIS);
+    double yStick = m_driveController.getRawAxis(Constants.STICK_Y_AXIS);
 
     m_driveTrainSub.arcadeDrive(yStick * Constants.DRIVE_SPEED, xStick * Constants.TURN_SPEED);
   }

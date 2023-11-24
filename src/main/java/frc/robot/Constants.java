@@ -28,10 +28,13 @@ public final class Constants {
   public static final double TURN_SPEED = 0.2;
 
   // Drive train.
-  public static final int RIGHT_MOTOR_1 = 1;
-  public static final int RIGHT_MOTOR_2 = 4;
-  public static final int LEFT_MOTOR_1 = 2;
-  public static final int LEFT_MOTOR_2 = 3;
+  //do we want back = odd, front = even; or vice versa?
+  //do we want left = odd, right = even; or vice versa?
+  // I screwed with the motor controllers on the robot 11/22, resetting motor ID's
+  public static final int RIGHT_MOTOR_1 = 0; 
+  public static final int RIGHT_MOTOR_2 = 0;
+  public static final int LEFT_MOTOR_1 = 0;
+  public static final int LEFT_MOTOR_2 = 0;
 
   //Ramp motor
   public static final int RAMP_MOTOR = 5;

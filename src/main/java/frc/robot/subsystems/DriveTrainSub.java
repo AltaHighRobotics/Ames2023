@@ -27,9 +27,11 @@ public class DriveTrainSub extends SubsystemBase {
     leftMotor1.configFactoryDefault();
     leftMotor2.configFactoryDefault();
 
+    //this motor.follow(this motor); 
+    //The first motor object follows the motor object passed as an argument (as far as I(duncan) can tell)
     rightMotor2.follow(rightMotor1);
-    leftMotor1.follow(leftMotor2);
-    leftMotor2.follow(rightMotor1);
+    leftMotor2.follow(leftMotor1);
+    //Telling the back motors {Motor2} to follow front Motor's {Motor1}
   }
 
   public void stop() {
@@ -53,5 +55,6 @@ public class DriveTrainSub extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    
   }
 }
