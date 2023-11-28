@@ -38,5 +38,5 @@ public final class Constants {
 
   //Ramp motor
   public static final int RAMP_MOTOR = 5;
-  public static final double RAMP_SPEED = 0.5;
+  public static final double RAMP_SPEED = .9;
 }
