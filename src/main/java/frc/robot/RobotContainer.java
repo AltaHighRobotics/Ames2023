@@ -51,15 +51,18 @@ public class RobotContainer {
    */
   private void configureBindings() {
     final JoystickButton rampSpinButton = new JoystickButton(m_driveController, Constants.BUTTON_A);
+    //The line beloew only activates every other press.
+    //rampSpinButton.onTrue(m_rampCommand);
+    //This line schedules the command and attempts to cancel it if the button is let go, exactly what we want
+    rampSpinButton.whileTrue(m_rampCommand);
 
-    rampSpinButton.onTrue(m_rampCommand);
   }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
    * @return the command to run in autonomous
-   */
+   */  
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
     return null;
