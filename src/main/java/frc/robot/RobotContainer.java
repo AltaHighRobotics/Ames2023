@@ -37,6 +37,7 @@ public class RobotContainer {
     // Configure the trigger bindings
     configureBindings();
     CommandScheduler.getInstance().setDefaultCommand(m_driveTrainSub, m_driveCommand);
+    CommandScheduler.getInstance().setDefaultCommand(m_rampSub,m_rampCommand );
   }
 
   /**

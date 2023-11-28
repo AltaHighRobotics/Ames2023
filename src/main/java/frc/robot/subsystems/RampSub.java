@@ -28,7 +28,7 @@ public class RampSub extends SubsystemBase {
   }
 
   public void arcadeSpin() {
-    setRampMotor(Constants.RAMP_SPEED);
+    setRampMotor(-Constants.RAMP_SPEED);
   }
 
   @Override

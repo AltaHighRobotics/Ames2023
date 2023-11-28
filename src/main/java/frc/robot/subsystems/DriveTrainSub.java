@@ -36,7 +36,7 @@ public class DriveTrainSub extends SubsystemBase {
 
   public void stop() {
     rightMotor1.neutralOutput();
-    leftMotor2.neutralOutput();
+    leftMotor1.neutralOutput();
   }
 
   public void setRightMotors(double power) {
@@ -44,7 +44,7 @@ public class DriveTrainSub extends SubsystemBase {
   }
 
   public void setLeftMotors(double power) {
-    leftMotor2.set(ControlMode.PercentOutput, power);
+    leftMotor1.set(ControlMode.PercentOutput, power+.1);
   }
 
   public void arcadeDrive(double forwardPower, double turnPower) {
