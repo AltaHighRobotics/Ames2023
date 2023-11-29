@@ -31,9 +31,9 @@ public class DriveCommand extends CommandBase {
   public void execute() {
     //robot was backwards, flipped these, if still wrong flip back!
     double xStick = m_driveController.getRawAxis(Constants.STICK_Y_AXIS);
-    double yStick = m_driveController.getRawAxis(Constants.STICK_X_AXIS);
+    double zStick = m_driveController.getRawAxis(Constants.STICK_Z_AXIS);
 
-    m_driveTrainSub.arcadeDrive(yStick * Constants.DRIVE_SPEED, xStick * Constants.TURN_SPEED);
+    m_driveTrainSub.arcadeDrive(zStick * Constants.DRIVE_SPEED, xStick * Constants.TURN_SPEED);
   }
 
   // Called once the command ends or is interrupted.

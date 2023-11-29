@@ -28,7 +28,10 @@ public class RampCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_rampSub.arcadeSpin();
+    double z_axis = m_driveController.getRawAxis(3);
+    System.out.println("TEsting");
+    m_rampSub.arcadeSpin(z_axis);
+
   }
 
   // Called once the command ends or is interrupted.

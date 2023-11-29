@@ -27,8 +27,8 @@ public class RampSub extends SubsystemBase {
     rampMotor.set(ControlMode.PercentOutput, power);
   }
 
-  public void arcadeSpin() {
-    setRampMotor(Constants.RAMP_SPEED);
+  public void arcadeSpin(double power) {
+    setRampMotor(power*Constants.RAMP_SPEED);
   }
 
   @Override
