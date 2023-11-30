@@ -5,20 +5,21 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.subsystems.RampSub;
+import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.Constants;
 
-public class RampCommand extends CommandBase {
-  /** Creates a new RampCommand. */
+public class ControlRampCommand extends CommandBase {
+  /** Creates a new ControlRampCommand. */
   private XboxController m_driveController;
   private RampSub m_rampSub;
 
-  public RampCommand(XboxController driveController, RampSub rampSub) {
-    // Use addRequirements() here to declare subsystem dependencies.
+  public ControlRampCommand(XboxController driveController, RampSub rampSub) {
     m_driveController = driveController;
     m_rampSub = rampSub;
 
     addRequirements(m_rampSub);
+    // Use addRequirements() here to declare subsystem dependencies.
   }
 
   // Called when the command is initially scheduled.
@@ -28,15 +29,15 @@ public class RampCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double z_axis = m_driveController.getRawAxis(3);
-    System.out.println("TEsting");
-    m_rampSub.arcadeSpin(z_axis);
-
+    double stick = m_driveController.getRawAxis(Constants.SLIDER_AXIS);
+    m_rampSub.setRampMotor(-stick*Constants.RAMP_SPEED);
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    m_rampSub.stop();
+  }
 
   // Returns true when the command should end.
   @Override

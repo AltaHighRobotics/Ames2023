@@ -17,6 +17,7 @@ public final class Constants {
   public static final int DRIVE_CONTROLLER = 0;
 
   // Controller stuff.
+  public static final int TRIGGER_BUTTON = 1;
   public static final int STICK_X_AXIS = 0;
   public static final int STICK_Y_AXIS = 1;
   public static final int STICK_Z_AXIS = 2;
@@ -24,8 +25,8 @@ public final class Constants {
   public static final int BUTTON_A = 1;
 
   // Drive stuff.
-  public static final double DRIVE_SPEED = 0.5;
-  public static final double TURN_SPEED = 0.5;
+  public static final double DRIVE_SPEED = 0.6;
+  public static final double TURN_SPEED = 0.8;
 
   // Drive train.
   public static final int RIGHT_MOTOR_1 = 2; 

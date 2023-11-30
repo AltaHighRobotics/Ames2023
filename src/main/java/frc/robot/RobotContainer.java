@@ -30,14 +30,13 @@ public class RobotContainer {
 
   // Commands.
   private DriveCommand m_driveCommand = new DriveCommand(m_driveController, m_driveTrainSub);
-  private RampCommand m_rampCommand = new RampCommand(m_driveController, m_rampSub);
+  private ControlRampCommand m_controlRampCommand = new ControlRampCommand(m_driveController, m_rampSub);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
     CommandScheduler.getInstance().setDefaultCommand(m_driveTrainSub, m_driveCommand);
-    CommandScheduler.getInstance().setDefaultCommand(m_rampSub,m_rampCommand );
   }
 
   /**
@@ -50,12 +49,11 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    final JoystickButton rampSpinButton = new JoystickButton(m_driveController, Constants.BUTTON_A);
+    final JoystickButton rampSpinButton = new JoystickButton(m_driveController, Constants.TRIGGER_BUTTON);
     //The line beloew only activates every other press.
     //rampSpinButton.onTrue(m_rampCommand);
     //This line schedules the command and attempts to cancel it if the button is let go, exactly what we want
-    rampSpinButton.whileTrue(m_rampCommand);
-
+    rampSpinButton.whileTrue(m_controlRampCommand);
   }
 
   /**

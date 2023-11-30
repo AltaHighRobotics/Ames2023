@@ -27,10 +27,6 @@ public class RampSub extends SubsystemBase {
     rampMotor.set(ControlMode.PercentOutput, power);
   }
 
-  public void arcadeSpin(double power) {
-    setRampMotor(power*Constants.RAMP_SPEED);
-  }
-
   @Override
   public void periodic() {
     // This method will be called once per scheduler run

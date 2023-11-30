@@ -44,7 +44,7 @@ public class DriveTrainSub extends SubsystemBase {
   }
 
   public void setLeftMotors(double power) {
-    leftMotor1.set(ControlMode.PercentOutput, power+.1);
+    leftMotor1.set(ControlMode.PercentOutput, power);
   }
 
   public void arcadeDrive(double forwardPower, double turnPower) {
