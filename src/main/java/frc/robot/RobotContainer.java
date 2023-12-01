@@ -27,10 +27,14 @@ public class RobotContainer {
   // Subsystems.
   private DriveTrainSub m_driveTrainSub = new DriveTrainSub();
   private RampSub m_rampSub = new RampSub();
-
+  
   // Commands.
   private DriveCommand m_driveCommand = new DriveCommand(m_driveController, m_driveTrainSub);
   private ControlRampCommand m_controlRampCommand = new ControlRampCommand(m_driveController, m_rampSub);
+  private AutoCommand m_autoCommand = new AutoCommand(m_driveTrainSub);
+
+
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -50,10 +54,12 @@ public class RobotContainer {
    */
   private void configureBindings() {
     final JoystickButton rampSpinButton = new JoystickButton(m_driveController, Constants.TRIGGER_BUTTON);
+    final JoystickButton autonomousButton = new JoystickButton(m_driveController, Constants.AUTONOMOUS_STARTER);
     //The line beloew only activates every other press.
     //rampSpinButton.onTrue(m_rampCommand);
     //This line schedules the command and attempts to cancel it if the button is let go, exactly what we want
     rampSpinButton.whileTrue(m_controlRampCommand);
+    autonomousButton.onTrue(m_autoCommand);
   }
 
   /**
