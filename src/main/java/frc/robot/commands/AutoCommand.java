@@ -27,6 +27,7 @@ public class AutoCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    System.out.println("balls");
     if (m_executed < Constants.maxExecutions)
     {
       m_driveTrainSub.arcadeDrive(1 * Constants.DRIVE_SPEED, 0 * Constants.TURN_SPEED);

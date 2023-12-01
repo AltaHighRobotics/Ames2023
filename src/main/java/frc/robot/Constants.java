@@ -14,7 +14,7 @@ package frc.robot;
  */
 public final class Constants {
   // Controllers.
-  public static final int DRIVE_CONTROLLER = 0;
+  public static final int DRIVE_CONTROLLER = 5;
 
   // Controller stuff.
   public static final int TRIGGER_BUTTON = 1;
