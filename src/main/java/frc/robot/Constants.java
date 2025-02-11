@@ -14,7 +14,7 @@ package frc.robot;
  */
 public final class Constants {
   // Controllers.
-  public static final int DRIVE_CONTROLLER = 0;
+  public static final int DRIVE_CONTROLLER = 5;
 
   // Controller stuff.
   public static final int TRIGGER_BUTTON = 1;
@@ -22,7 +22,7 @@ public final class Constants {
   public static final int STICK_Y_AXIS = 1;
   public static final int STICK_Z_AXIS = 2;
   public static final int SLIDER_AXIS = 3;
-  public static final int BUTTON_A = 1;
+  public static final int AUTONOMOUS_STARTER = 6;
 
   // Drive stuff.
   public static final double DRIVE_SPEED = 0.6;
@@ -37,4 +37,7 @@ public final class Constants {
   //Ramp motor
   public static final int RAMP_MOTOR = 5;
   public static final double RAMP_SPEED = -.9;
+
+  //Autonomous
+  public static final int maxExecutions = 50; //50 = 1 second
 }
