@@ -6,6 +6,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import frc.robot.Constants;
 
@@ -13,14 +14,14 @@ public class DriveTrainSub extends SubsystemBase {
   /** Creates a new DriveTrainSub. */
   private WPI_TalonSRX rightMotor1;
   private WPI_TalonSRX rightMotor2;
-  private WPI_TalonSRX leftMotor1;
-  private WPI_TalonSRX leftMotor2;
+  private WPI_VictorSPX leftMotor1;
+  private WPI_VictorSPX leftMotor2;
 
   public DriveTrainSub() {
     rightMotor1 = new WPI_TalonSRX(Constants.RIGHT_MOTOR_1);
     rightMotor2 = new WPI_TalonSRX(Constants.RIGHT_MOTOR_2);
-    leftMotor1 = new WPI_TalonSRX(Constants.LEFT_MOTOR_1);
-    leftMotor2 = new WPI_TalonSRX(Constants.LEFT_MOTOR_2);
+    leftMotor1 = new WPI_VictorSPX(Constants.LEFT_MOTOR_1);
+    leftMotor2 = new WPI_VictorSPX(Constants.LEFT_MOTOR_2);
 
     rightMotor1.configFactoryDefault();
     rightMotor2.configFactoryDefault();
